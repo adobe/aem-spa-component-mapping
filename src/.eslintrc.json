@@ -1,0 +1,26 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "globals": {
+    "CustomEvent": true,
+    "console": true,
+    "document": true,
+    "fetch": true,
+    "history": true,
+    "Promise": true,
+    "window": true,
+    "XMLHttpRequest": true
+  },
+  "rules": {
+    "no-console": "off",
+    "react/display-name": "off"
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}
