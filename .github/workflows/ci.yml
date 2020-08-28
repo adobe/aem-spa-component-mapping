@@ -1,9 +1,5 @@
-name: CI / CD
-on:
-  push:
-    branches:
-      - master
-  pull_request:
+name: Continuous Integration
+on: pull_request
 
 jobs:
   test:
@@ -29,8 +25,3 @@ jobs:
         with:
           name: coverage
           path: coverage
-      - name: Release
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          run: npm run semantic-release
