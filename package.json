@@ -46,7 +46,8 @@
     "docs-readme": "npm run docs && npm run readme",
     "preversion": "npm run test && npm run build:production && npm run docs-readme",
     "version": "npm run docs-readme && git add -A",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "semantic-release": "semantic-release"
   },
   "author": "Adobe Systems Inc.",
   "license": "Apache-2.0",
@@ -55,6 +56,9 @@
     "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
     "@types/jest": "^26.0.8",
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
@@ -68,6 +72,8 @@
     "babel-plugin-transform-decorators": "6.24.1",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^3.0.0",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "doxdox": "^2.0.3",
     "doxdox-plugin-markdown": "^2.0.0",
     "eslint": "^7.6.0",
@@ -78,6 +84,7 @@
     "jest": "^26.2.2",
     "jsdoc": "^3.6.5",
     "markdown-include": "^0.4.3",
+    "semantic-release": "^17.1.1",
     "ts-jest": "^26.1.4",
     "ts-loader": "^8.0.2",
     "tslint": "^6.1.3",
@@ -85,5 +92,10 @@
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
