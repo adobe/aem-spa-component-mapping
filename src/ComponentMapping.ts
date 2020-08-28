@@ -55,9 +55,9 @@ class ComponentMappingImpl {
     public static map(resourceTypes: string | string[], clazz: any): void {
         if (resourceTypes && clazz) {
             const self = this;
+            const resourceList = (typeof resourceTypes === 'string') ? [ resourceTypes ] : resourceTypes;
 
-            // @ts-ignore
-            [].concat(resourceTypes).forEach((entry) => { self.mapping[entry] = clazz; });
+            resourceList.forEach((entry) => { self.mapping[entry] = clazz; });
         }
     }
 
