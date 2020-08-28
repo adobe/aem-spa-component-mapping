@@ -12,5 +12,5 @@ module.exports = {
     }],
     '@semantic-release/github',
   ],
-  branches: ['master']
+  branches: [ { name: 'master' } ]
 };
