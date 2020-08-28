@@ -19,7 +19,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     output: {
-        globalObject: `(function(){ try{ return typeof self !== 'undefined'}catch(err){return false}})()`,
+        globalObject: `(function(){ try{ return typeof self !== 'undefined';}catch(err){return false;}})() ? self : this`,
         path: path.resolve(__dirname, 'dist'),
         filename: 'aem-spa-component-mapping.js',
         library: 'cqSpaComponentMapping',
