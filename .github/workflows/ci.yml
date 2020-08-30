@@ -25,3 +25,5 @@ jobs:
         with:
           name: coverage
           path: coverage
+      - name: Code coverage
+        uses: codecov/codecov-action@v1
