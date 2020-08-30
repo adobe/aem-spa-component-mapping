@@ -54,10 +54,9 @@ class ComponentMappingImpl {
 
     public static map(resourceTypes: string | string[], clazz: any): void {
         if (resourceTypes && clazz) {
-            const self = this;
             const resourceList = (typeof resourceTypes === 'string') ? [ resourceTypes ] : resourceTypes;
 
-            resourceList.forEach((entry) => { self.mapping[entry] = clazz; });
+            resourceList.forEach((entry) => { this.mapping[entry] = clazz; });
         }
     }
 
