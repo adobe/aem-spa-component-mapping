@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe/aem-spa-page-model-manager.git"
+    "url": "https://github.com/adobe/aem-spa-component-mapping.git"
   },
   "auto-changelog": {
     "template": "templates/CHANGELOG.hbs"
