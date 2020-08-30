@@ -1,5 +1,3 @@
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-
 # Table of contents
 
   * [Installation](#installation)
@@ -9,7 +7,7 @@
     * [Licensing](#licensing)
 
 
-## Installation
+## Installation 
 ```
 npm install @adobe/aem-spa-component-mapping
 ```
@@ -33,7 +31,7 @@ export default MapTo('my/resource/type')(MyComponent);
 
 ```
 
-## Documentation
+## Documentation 
 
 The [technical documentation](https://www.adobe.com/go/aem6_4_docs_spa_en) is already available, but if you are unable to solve your problem or you found a bug you can always create an issue or through other means [contact us](https://www.adobe.com/go/aem6_4_support_en) and ask for help!
 
