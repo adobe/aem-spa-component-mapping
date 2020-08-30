@@ -26,7 +26,6 @@
     "experience manager",
     "marketing cloud",
     "cq",
-    "reactjs",
     "componentmapping"
   ],
   "main": "dist/aem-spa-component-mapping.js",
@@ -77,7 +76,6 @@
     "doxdox": "^2.0.3",
     "doxdox-plugin-markdown": "^2.0.0",
     "eslint": "^7.6.0",
-    "eslint-plugin-react": "^7.20.5",
     "inject-loader": "^4.0.1",
     "istanbul": "^0.4.5",
     "istanbul-instrumenter-loader": "^3.0.1",
