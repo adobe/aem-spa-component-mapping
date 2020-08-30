@@ -4,7 +4,7 @@
     "sourceType": "module"
   },
   "globals": {
-    "module"
+    "module": true
   },
   "plugins": [],
   "extends": [
