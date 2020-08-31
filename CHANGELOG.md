@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.4...v1.0.5) (2020-08-31)
+
+
+### Bug Fixes
+
+* **semantic-release:** remove readme generation on release ([#14](https://github.com/adobe/aem-spa-component-mapping/issues/14)) ([7d0f5f5](https://github.com/adobe/aem-spa-component-mapping/commit/7d0f5f56bfeda1a5d7258bb4f51248d4b04a8c7c))
+
 ## [1.0.4](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.3...v1.0.4) (2020-08-30)
 
 
