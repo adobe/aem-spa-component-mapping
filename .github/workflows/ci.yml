@@ -38,6 +38,6 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.organization=Adobe
-            -Dsonar.projectKey=aem-spa-component-mapping
+            -Dsonar.organization=adobeinc
+            -Dsonar.projectKey=adobe_aem-spa-component-mapping
             -Dsonar.verbose=true
