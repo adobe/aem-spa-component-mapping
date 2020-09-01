@@ -16,13 +16,13 @@ jobs:
           node-version: '12'
       - name: Install dependencies
         run: npm ci
+      - name: Code coverage
+        run: npm run test:coverage
       - name: Lint
         uses: hallee/eslint-action@1.0.3
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
-      - name: Generate code coverage report
-        run: npm run test:coverage
       - name: Store code coverage as workflow artifact
         uses: actions/upload-artifact@v2
         with:
