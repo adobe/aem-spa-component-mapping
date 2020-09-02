@@ -5,9 +5,6 @@
     "type": "git",
     "url": "https://github.com/adobe/aem-spa-component-mapping.git"
   },
-  "auto-changelog": {
-    "template": "templates/CHANGELOG.hbs"
-  },
   "bugs": {
     "url": "https://www.adobe.com/go/aem6_4_support_en"
   },
@@ -40,9 +37,8 @@
     "build": "npm run clean && npm run linter && webpack $WP_ARGS && npm run build:types",
     "build:production": "WP_ARGS=--mode=production npm run build",
     "build:types": "tsc -p src/tsconfig.types.json",
-    "docs": "doxdox \"src/**/*.+(js|jsx)\" --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md",
-    "preversion": "npm run test && npm run build:production && npm run docs",
-    "version": "npm run docs && git add -A",
+    "preversion": "npm run test && npm run build:production",
+    "version": "git add -A",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release"
   },
@@ -61,7 +57,6 @@
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "ajv": "^6.12.3",
-    "auto-changelog": "^2.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
@@ -71,8 +66,6 @@
     "clean-webpack-plugin": "^3.0.0",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.3.0",
-    "doxdox": "^2.0.3",
-    "doxdox-plugin-markdown": "^2.0.0",
     "eslint": "^7.6.0",
     "inject-loader": "^4.0.1",
     "istanbul": "^0.4.5",
