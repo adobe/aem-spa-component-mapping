@@ -28,7 +28,7 @@ class ComponentMappingImpl {
 
     static mapping: ComponentMappingObject = {};
 
-    static get instance(): ComponentMappingImpl {
+    static get instance(): ComponentMappingImpl2 {
         return new this();
     }
 
