@@ -43,9 +43,9 @@ jobs:
             -Dsonar.projectKey=adobe_aem-spa-component-mapping
             -Dsonar.sources=src
             -Dsonar.tests=test
-      - name: build documentation
+      - name: Build documentation
         run: npm run docs
-      - name: publish documentation
+      - name: Publish documentation to github pages
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
