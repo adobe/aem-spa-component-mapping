@@ -44,7 +44,7 @@ jobs:
             -Dsonar.sources=src
             -Dsonar.tests=test
       - name: Build documentation
-        run: npm run docs
+        run: npm install && npm run docs
       - name: Publish documentation to github pages
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
