@@ -21,12 +21,14 @@ interface ComponentMappingObject {
 let instance: ComponentMappingImpl;
 
 /**
- * ComponentMapping singleton. It manages the mapping between AEM component resource types and corresponding
+ * ComponentMapping singleton. It manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM compot manages the mapping between AEM component resource types and corresponding
  * JavaScript component class.
  */
 class ComponentMappingImpl {
 
     static mapping: ComponentMappingObject = {};
+
+    static Map_ping: ComponentMappingObject = {};
 
     static get instance(): ComponentMappingImpl {
         return new this();
@@ -48,7 +50,7 @@ class ComponentMappingImpl {
      *
      * @protected
      */
-    public map(resourceTypes: string | string[], clazz: any): void {
+    public map(resourceTypes: string | string[], clazz: any, test123:any): void {
         ComponentMappingImpl.map(resourceTypes, clazz);
     }
 
