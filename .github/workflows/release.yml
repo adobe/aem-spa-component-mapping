@@ -28,11 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run semantic-release
-      - name: build documentation
-        run: npm run docs
-      - name: publish documentation
-        uses: JamesIves/github-pages-deploy-action@3.5.9
-          with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            BRANCH: gh-pages-documentation
-            FOLDER: docs
