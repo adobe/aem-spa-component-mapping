@@ -1,12 +1,8 @@
-# aem-spa-component-mapping
-
-Library that provides a mapping that associates a component class with a resource path
-
-## Development
+# Development
 
 Run npm install to get all node_modules that are necessary for development.
 
-### Build
+## Build
 
 ```sh
 $ npm run build
@@ -18,28 +14,23 @@ or
 $ npm run build:production
 ```
 
-### Test
+## Test
 
 ```sh
 $ npm run test
 ```
 
-or
+## Usage example
 
-```sh
-$ npm run test-debug
+The `MapTo` helper can be used to directly associate resource type(s) with a given SPA component.
+
 ```
+import { MapTo } from '@adobe/spa-component-mapping';
 
-### Generate docs
+class MyComponent {
+    ...
+}
 
-```sh
-$ npm run docs
-```
+export default MapTo('my/resource/type')(MyComponent);
 
-The documents will be generated in the /out folder
-
-### Generate Changelog
-
-```sh
-$ auto-changelog
 ```
