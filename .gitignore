@@ -6,6 +6,7 @@
 /build
 /temp
 /dist
+docs/
 
 # dependency directories
 node_modules/
