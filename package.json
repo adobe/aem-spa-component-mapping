@@ -38,7 +38,7 @@
     "build:production": "WP_ARGS=--mode=production npm run build",
     "build:types": "tsc -p src/tsconfig.types.json",
     "preversion": "npm run test && npm run build:production",
-    "docs": "npx typedoc ./src --out ./docs --mode file  --plugin typedoc-plugin-markdown && mv docs/README.md docs/index.md",
+    "docs": "npx typedoc ./src --out ./docs --mode file",
     "version": "git add -A",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release"
@@ -79,7 +79,6 @@
     "tslint": "^6.1.3",
     "tslint-etc": "^1.13.0",
     "typedoc": "^0.19.0",
-    "typedoc-plugin-markdown": "^2.4.2",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
