@@ -29,7 +29,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run semantic-release
       - name: Build documentation
-        run: npm install && npm run docs
+        run: npm run docs
       - name: Publish documentation to github pages
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
