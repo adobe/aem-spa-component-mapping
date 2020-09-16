@@ -37,6 +37,7 @@ jobs:
             -Dsonar.sources=src
             -Dsonar.tests=test
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.coverage.exclusions=src/aem-spa-component-mapping.ts,src/types.ts,src/utils/MapComponents.js
       - name: Release module and publish it in github.com and npmjs.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
