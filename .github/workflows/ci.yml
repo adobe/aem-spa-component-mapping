@@ -44,3 +44,5 @@ jobs:
             -Dsonar.sources=src
             -Dsonar.tests=test
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.inclusions=src/**/*
+            -Dsonar.exclusions=test/**/*,src/aem-spa-component-mapping.ts,src/types.ts,src/utils/MapComponents.js
