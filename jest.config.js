@@ -18,7 +18,8 @@ module.exports = {
         "/dist/",
         "/node/",
         "src/types.ts",
-        "src/aem-spa-component-mapping.ts"
+        "src/aem-spa-component-mapping.ts",
+        "src/utils/MapComponents.js"
     ],
     moduleFileExtensions: [
         "ts",
