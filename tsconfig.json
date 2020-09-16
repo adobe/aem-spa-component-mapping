@@ -21,11 +21,5 @@
     "isolatedModules": true,
     "outDir": "./dist"
   },
-  "include": [ "src/**/*" ],
-  "exclude": [
-    "node_modules",
-    "src/utils/MapComponents.js",
-    "src/aem-spa-component-mapping.ts",
-    "src/types.ts"
-  ]
+  "include": [ "src/**/*" ]
 }
