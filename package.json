@@ -38,7 +38,7 @@
     "build:production": "WP_ARGS=--mode=production npm run build",
     "build:types": "tsc -p src/tsconfig.types.json",
     "preversion": "npm run test && npm run build:production",
-    "docs": "npm i && npx typedoc ./src --out ./docs --mode file",
+    "docs": "npm i && npx typedoc --excludePrivate ./src --out ./docs --mode file",
     "version": "git add -A",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release"

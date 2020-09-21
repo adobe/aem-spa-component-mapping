@@ -18,11 +18,16 @@ interface ComponentMappingObject {
     [ key: string ]: any;
 }
 
+/**
+ * @private
+ */
 let instance: ComponentMappingImpl;
 
 /**
  * ComponentMapping singleton. It manages the mapping between AEM component resource types and corresponding
  * JavaScript component class.
+ *
+ * @private
  */
 class ComponentMappingImpl {
 
@@ -43,8 +48,8 @@ class ComponentMappingImpl {
     /**
      * Creates mapping for given resource type(s) and a component class.
      *
-     * @param {string|array} resourceTypes - resource type(s)
-     * @param {object} clazz - component class that should be associated with given resource type(s)
+     * @param resourceTypes resource type(s)
+     * @param clazz component class that should be associated with given resource type(s)
      *
      * @protected
      */
@@ -63,8 +68,8 @@ class ComponentMappingImpl {
     /**
      * Returns object (or undefined) matching with given resource type.
      *
-     * @param {string} resourceType - resource type
-     * @returns {object|undefined} - class associated with given resource type
+     * @param resourceType resource type
+     * @returns class associated with given resource type
      */
     public get(resourceType: string): any | undefined {
         return ComponentMappingImpl.get(resourceType);
@@ -73,8 +78,8 @@ class ComponentMappingImpl {
     /**
      * Returns object (or undefined) matching with given resource type.
      *
-     * @param {string} resourceType - resource type
-     * @returns {object|undefined} - class associated with given resource type
+     * @param resourceType resource type
+     * @returns class associated with given resource type
      */
     public static get(resourceType: string): any | undefined {
         return this.mapping[resourceType];
@@ -83,10 +88,21 @@ class ComponentMappingImpl {
 }
 
 /**
- * Helper function that can be used to map a class to given resource type(s).
+ * Use to register resource types to Class mapping.
  *
- * @param {string|array} resourceTypes - resource type(s)
- * @returns {function} - function meant to map a class with the previously given resource types
+ * Example:
+ * ```
+ * import { MapTo } from '@adobe/aem-spa-component-mapping';
+ *
+ * class MyComponent {
+ *  ...
+ * }
+ *
+ * export default MapTo('my/resource/type')(MyComponent);
+ * ```
+ * 
+ * @param resourceTypes AEM resource types
+ * @returns Function mapping a class with the given resource types
  */
 function MapTo(resourceTypes: string | string[]) {
     return (clazz: any) => ComponentMappingImpl.instance.map(resourceTypes, clazz);
