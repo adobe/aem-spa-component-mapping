@@ -11,7 +11,7 @@
  */
 
 /**
- * ComponentMapping instance.
+ * ComponentMapping interface.
  * @private
  */
 interface ComponentMappingObject {
@@ -19,6 +19,7 @@ interface ComponentMappingObject {
 }
 
 /**
+ * ComponentMapping instance.
  * @private
  */
 let instance: ComponentMappingImpl;
@@ -26,7 +27,6 @@ let instance: ComponentMappingImpl;
 /**
  * ComponentMapping singleton. It manages the mapping between AEM component resource types and corresponding
  * JavaScript component class.
- *
  * @private
  */
 class ComponentMappingImpl {
@@ -47,39 +47,43 @@ class ComponentMappingImpl {
 
     /**
      * Creates mapping for given resource type(s) and a component class.
-     *
-     * @param resourceTypes resource type(s)
-     * @param clazz component class that should be associated with given resource type(s)
-     *
+     * @param resourceTypes Resource type(s).
+     * @param clazz Component class that will be associated with given resource type(s).
      * @protected
      */
     public map(resourceTypes: string | string[], clazz: any): void {
         ComponentMappingImpl.map(resourceTypes, clazz);
     }
 
+    /**
+     * Creates mapping for given resource type(s) and a component class.
+     * @param resourceTypes Resource type(s).
+     * @param clazz Component class that will be associated with given resource type(s).
+     * @protected
+     */
     public static map(resourceTypes: string | string[], clazz: any): void {
         if (resourceTypes && clazz) {
             const resourceList = (typeof resourceTypes === 'string') ? [ resourceTypes ] : resourceTypes;
 
-            resourceList.forEach((entry) => { this.mapping[entry] = clazz; });
+            resourceList.forEach((entry) => {
+                this.mapping[entry] = clazz;
+            });
         }
     }
 
     /**
-     * Returns object (or undefined) matching with given resource type.
-     *
-     * @param resourceType resource type
-     * @returns class associated with given resource type
+     * Returns object (or `undefined`) matching with given resource type.
+     * @param resourceType Resource type.
+     * @returns Class associated with given resource type or `undefined`.
      */
     public get(resourceType: string): any | undefined {
         return ComponentMappingImpl.get(resourceType);
     }
 
     /**
-     * Returns object (or undefined) matching with given resource type.
-     *
-     * @param resourceType resource type
-     * @returns class associated with given resource type
+     * Returns object (or `undefined`) matching with given resource type.
+     * @param resourceType Resource type.
+     * @returns Class associated with given resource type or `undefined`.
      */
     public static get(resourceType: string): any | undefined {
         return this.mapping[resourceType];
@@ -101,10 +105,10 @@ class ComponentMappingImpl {
  * export default MapTo('my/resource/type')(MyComponent);
  * ```
  * 
- * @param resourceTypes AEM resource types
- * @returns Function mapping a class with the given resource types
+ * @param resourceTypes AEM resource type(s).
+ * @returns Function mapping a class with the given resource types.
  */
-function MapTo(resourceTypes: string | string[]) {
+const MapTo = (resourceTypes: string | string[]) => {
     return (clazz: any) => ComponentMappingImpl.instance.map(resourceTypes, clazz);
 }
 
