@@ -104,7 +104,7 @@ class ComponentMappingImpl {
  *
  * export default MapTo('my/resource/type')(MyComponent);
  * ```
- * 
+ *
  * @param resourceTypes AEM resource type(s).
  * @returns Function mapping a class with the given resource types.
  */
