@@ -59,5 +59,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@adobe/eslint-config-editorxp/typescript"
+    ]
   }
 }
