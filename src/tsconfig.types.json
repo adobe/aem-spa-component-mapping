@@ -4,8 +4,8 @@
         "noEmit": false,
         "baseUrl": ".",
         "paths": {
-            "@adobe/aem-spa-component-mapping": ["./"],
-            "@adobe/aem-spa-component-mapping/*": ["./*"]
+            "@adobe/aem-spa-component-mapping": [ "./" ],
+            "@adobe/aem-spa-component-mapping/*": [ "./*" ]
         },
         "composite": true,
         "module": "es2015",
