@@ -55,6 +55,10 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
+  "files": [
+    "dist/**/*.{js,ts,map}",
+    "!**/{docs,coverage}/"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
