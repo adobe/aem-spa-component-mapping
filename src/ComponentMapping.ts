@@ -15,7 +15,7 @@
  * @private
  */
 interface ComponentMappingObject {
-    [ key: string ]: any;
+    [ key: string ]: unknown;
 }
 
 /**
@@ -51,7 +51,7 @@ class ComponentMappingImpl {
      * @param clazz Component class that will be associated with given resource type(s).
      * @protected
      */
-    public map(resourceTypes: string | string[], clazz: any): void {
+    public map(resourceTypes: string | string[], clazz: unknown): void {
         ComponentMappingImpl.map(resourceTypes, clazz);
     }
 
@@ -61,7 +61,7 @@ class ComponentMappingImpl {
      * @param clazz Component class that will be associated with given resource type(s).
      * @protected
      */
-    public static map(resourceTypes: string | string[], clazz: any): void {
+    public static map(resourceTypes: string | string[], clazz: unknown): void {
         if (resourceTypes && clazz) {
             const resourceList = (typeof resourceTypes === 'string') ? [ resourceTypes ] : resourceTypes;
 
@@ -76,7 +76,7 @@ class ComponentMappingImpl {
      * @param resourceType Resource type.
      * @returns Class associated with given resource type or `undefined`.
      */
-    public get(resourceType: string): any | undefined {
+    public get(resourceType: string): any {
         return ComponentMappingImpl.get(resourceType);
     }
 
@@ -85,7 +85,7 @@ class ComponentMappingImpl {
      * @param resourceType Resource type.
      * @returns Class associated with given resource type or `undefined`.
      */
-    public static get(resourceType: string): any | undefined {
+    public static get(resourceType: string): any {
         return this.mapping[resourceType];
     }
 
@@ -108,8 +108,8 @@ class ComponentMappingImpl {
  * @param resourceTypes AEM resource type(s).
  * @returns Function mapping a class with the given resource types.
  */
-const MapTo = (resourceTypes: string | string[]) => {
-    return (clazz: any) => ComponentMappingImpl.instance.map(resourceTypes, clazz);
-}
+const MapTo = (resourceTypes: string | string[]): (clazz: unknown) => void => {
+    return (clazz: unknown) => ComponentMappingImpl.instance.map(resourceTypes, clazz);
+};
 
 export { ComponentMappingImpl as ComponentMapping, MapTo };
