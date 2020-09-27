@@ -68,30 +68,8 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class"><a href="classes/componentmappingimpl.html" class="tsd-kind-icon">Component<wbr>Mapping<wbr>Impl</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-is-private"><a href="interfaces/componentmappingobject.html" class="tsd-kind-icon">Component<wbr>Mapping<wbr>Object</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable"><a href="globals.html#automapcomponents" class="tsd-kind-icon">auto<wbr>Map<wbr>Components</a></li>
-								<li class="tsd-kind-variable"><a href="globals.html#config" class="tsd-kind-icon">config</a></li>
-								<li class="tsd-kind-variable"><a href="globals.html#configfile" class="tsd-kind-icon">config<wbr>File</a></li>
-								<li class="tsd-kind-variable"><a href="globals.html#instance" class="tsd-kind-icon">instance</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-is-private"><a href="globals.html#mapcomponents" class="tsd-kind-icon">Map<wbr>Components</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#mapto" class="tsd-kind-icon">Map<wbr>To</a></li>
 							</ul>
 						</section>
@@ -99,130 +77,63 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="automapcomponents" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> auto<wbr>Map<wbr>Components</h3>
-					<div class="tsd-signature tsd-kind-icon">auto<wbr>Map<wbr>Components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/utils/MapComponents.js#L87">utils/MapComponents.js:87</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="config" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> config</h3>
-					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = fs.existsSync(configFile) ? JSON.parse(fs.readFileSync(configFile, &#x27;utf8&#x27;)) : {}</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/utils/MapComponents.js#L91">utils/MapComponents.js:91</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="configfile" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> config<wbr>File</h3>
-					<div class="tsd-signature tsd-kind-icon">config<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"cq-component-mapping.json"</span><span class="tsd-signature-symbol"> = &quot;cq-component-mapping.json&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/utils/MapComponents.js#L90">utils/MapComponents.js:90</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="instance" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> instance</h3>
-					<div class="tsd-signature tsd-kind-icon">instance<span class="tsd-signature-symbol">:</span> <a href="classes/componentmappingimpl.html" class="tsd-signature-type">ComponentMappingImpl</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/ComponentMapping.ts#L21">ComponentMapping.ts:21</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-private">
-					<a name="mapcomponents" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagLet">Let</span> Map<wbr>Components</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">Map<wbr>Components<span class="tsd-signature-symbol">(</span>sourceRoot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, mappingOutput<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, extensions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/utils/MapComponents.js#L27">utils/MapComponents.js:27</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Explores given directory and generates js file requiring all components using @MapTo decorator.
-									WARNING: Not supported in babel for now (<a href="https://babeljs.io/docs/plugins/transform-decorators">https://babeljs.io/docs/plugins/transform-decorators</a>)</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> sourceRoot: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;./&quot;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>directory traversing root</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mappingOutput: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;src/AllComponents.jsx&quot;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>name of generated file</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> extensions: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = [ &#x27;js&#x27;, &#x27;jsx&#x27;, &#x27;ts&#x27; ]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>array of accepted file extensions</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="mapto" class="tsd-anchor"></a>
-					<h3>Map<wbr>To</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Map<wbr>To</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">Map<wbr>To<span class="tsd-signature-symbol">(</span>resourceTypes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+						<li class="tsd-signature tsd-kind-icon">Map<wbr>To<span class="tsd-signature-symbol">(</span>resourceTypes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/832ac64/src/ComponentMapping.ts#L91">ComponentMapping.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/0902c97/src/ComponentMapping.ts#L111">ComponentMapping.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Helper function that can be used to map a class to given resource type(s).</p>
+									<p>Use to register resource types to Class mapping.</p>
 								</div>
+								<p>Example:</p>
+								<pre><code>import { MapTo } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@adobe/aem-spa-component-mapping&#x27;</span>;
+
+class MyComponent {
+ <span class="hljs-built_in">..</span>.
+}
+
+<span class="hljs-builtin-name">export</span><span class="hljs-built_in"> default </span>MapTo(<span class="hljs-string">&#x27;my/resource/type&#x27;</span>)(MyComponent);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>resourceTypes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>resource type(s)</p>
+										<div class="lead">
+											<p>AEM resource type(s).</p>
+										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
-							<ul>
-								<li>function meant to map a class with the previously given resource types</li>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<p>Function mapping a class with the given resource types.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>clazz: <span class="tsd-signature-type">unknown</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -239,27 +150,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/componentmappingimpl.html" class="tsd-kind-icon">Component<wbr>Mapping<wbr>Impl</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-private">
-						<a href="interfaces/componentmappingobject.html" class="tsd-kind-icon">Component<wbr>Mapping<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#automapcomponents" class="tsd-kind-icon">auto<wbr>Map<wbr>Components</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#config" class="tsd-kind-icon">config</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#configfile" class="tsd-kind-icon">config<wbr>File</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#instance" class="tsd-kind-icon">instance</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-private">
-						<a href="globals.html#mapcomponents" class="tsd-kind-icon">Map<wbr>Components</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#mapto" class="tsd-kind-icon">Map<wbr>To</a>
 					</li>
@@ -272,17 +162,6 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
