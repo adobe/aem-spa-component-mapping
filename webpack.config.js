@@ -11,42 +11,32 @@
  */
 
 const path = require('path');
-const isEnvironmentTest = process.env.NODE_ENV === 'test';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/aem-spa-component-mapping.ts',
-    mode: 'development',
-    devtool: 'source-map',
-    output: {
-        globalObject: `(function(){ try{ return typeof self !== 'undefined';}catch(err){return false;}})() ? self : this`,
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'aem-spa-component-mapping.js',
-        library: 'cqSpaComponentMapping',
-        libraryTarget: 'umd'
-    },
-    module: {
-        rules: [
-            {
-                test: /.ts$/,
-                exclude: /(node_modules|dist)/,
-                use: {
-                    loader: 'ts-loader',
-                },
-                enforce: 'post'
-            }
-        ].concat(isEnvironmentTest ? {
-            test: /.ts$/,
-            include: path.resolve(__dirname, 'src'),
-            use: {
-                loader: 'istanbul-instrumenter-loader',
-                options: { esModules: true }
-            },
-            enforce: 'post'
-        } : [])
-    },
-    resolve: {
-        extensions: ['.ts']
-    },
-    plugins: [ new CleanWebpackPlugin() ]
+  entry: './src/types.ts',
+  mode: 'development',
+  devtool: 'source-map',
+  output: {
+    globalObject: `(function(){ try{ return typeof self !== 'undefined';}catch(err){return false;}})() ? self : this`,
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'aem-spa-component-mapping.js',
+    library: 'aemSpaComponentMapping',
+    libraryTarget: 'umd'
+  },
+  module: {
+    rules: [
+      {
+        test: /.ts$/,
+        use: {
+          loader: 'ts-loader'
+        },
+        enforce: 'post'
+      }
+    ]
+  },
+  resolve: {
+    extensions: [ '.ts' ]
+  },
+  plugins: [ new CleanWebpackPlugin() ]
 };
