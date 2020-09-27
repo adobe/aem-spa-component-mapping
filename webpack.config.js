@@ -13,10 +13,16 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV === 'production';
+const mode = isProduction ? 'production' : 'development';
+const devtool = isProduction ? false : 'source-map';
+
+console.log('Building for:', mode);
+
 module.exports = {
   entry: './src/types.ts',
-  mode: 'development',
-  devtool: 'source-map',
+  mode,
+  devtool,
   output: {
     globalObject: `(function(){ try{ return typeof self !== 'undefined';}catch(err){return false;}})() ? self : this`,
     path: path.resolve(__dirname, 'dist'),
@@ -28,6 +34,7 @@ module.exports = {
     rules: [
       {
         test: /.ts$/,
+        exclude: /(node_modules|dist)/,
         use: {
           loader: 'ts-loader'
         },
