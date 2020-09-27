@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.5...v1.0.6) (2020-09-27)
+
+
+### Bug Fixes
+
+* remove project and documentation clutter ([#27](https://github.com/adobe/aem-spa-component-mapping/issues/27)) ([19ece68](https://github.com/adobe/aem-spa-component-mapping/commit/19ece684cfaa835c0c045018f643297b4d70e974))
+
 ## [1.0.5](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.4...v1.0.5) (2020-08-31)
 
 
