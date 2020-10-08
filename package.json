@@ -1,6 +1,6 @@
 {
   "name": "@adobe/aem-spa-component-mapping",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Provides a mapping of SPA front-end components to AEM resource types.",
   "keywords": [
     "spa",

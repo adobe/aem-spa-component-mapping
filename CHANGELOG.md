@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.6...v1.0.7) (2020-10-08)
+
+
+### Bug Fixes
+
+* **package.json:** update engine targets ([#30](https://github.com/adobe/aem-spa-component-mapping/issues/30)) ([e5a44f8](https://github.com/adobe/aem-spa-component-mapping/commit/e5a44f8fa2cac09aef00c2bfbdfddd7ab335d5cf))
+
 ## [1.0.6](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.5...v1.0.6) (2020-09-27)
 
 
