@@ -15,10 +15,16 @@
  * @private
  */
 interface ComponentMappingObject {
-    [ key: string ]: any;
+    [key: string]: any;
+}
+
+interface LazyComponentMappingObject {
+    [key: string]: lazyMapFunction;
 }
 
 let instance: ComponentMappingImpl;
+
+export type lazyMapFunction = () => Promise<any>;
 
 /**
  * ComponentMapping singleton. It manages the mapping between AEM component resource types and corresponding
@@ -27,6 +33,8 @@ let instance: ComponentMappingImpl;
 class ComponentMappingImpl {
 
     static mapping: ComponentMappingObject = {};
+    static lazyMapping: LazyComponentMappingObject = {};
+
 
     static get instance(): ComponentMappingImpl {
         return new this();
@@ -57,7 +65,24 @@ class ComponentMappingImpl {
             const self = this;
 
             // @ts-ignore
-            [].concat(resourceTypes).forEach((entry) => { self.mapping[entry] = clazz; });
+            [].concat(resourceTypes).forEach((entry) => {
+                self.mapping[entry] = clazz;
+            });
+        }
+    }
+
+    public lazyMap(resourceTypes: string | string[], clazz: lazyMapFunction): void {
+        ComponentMappingImpl.lazyMap(resourceTypes, clazz);
+    }
+
+    public static lazyMap(resourceTypes: string | string[], clazz: lazyMapFunction): void {
+        if (resourceTypes && clazz) {
+            const self = this;
+
+            // @ts-ignore
+            [].concat(resourceTypes).forEach((entry) => {
+                self.lazyMapping[entry] = clazz;
+            });
         }
     }
 
@@ -79,6 +104,33 @@ class ComponentMappingImpl {
      */
     public static get(resourceType: string): any | undefined {
         return this.mapping[resourceType];
+    }
+
+    /**
+     * Returns object (or undefined) matching with given resource type.
+     *
+     * @param {string} resourceType - resource type
+     * @returns {object|undefined} - class associated with given resource type
+     */
+    public getLazy(resourceType: string): Promise<any> | undefined {
+        return ComponentMappingImpl.getLazy(resourceType);
+    }
+
+    public static getLazy(resourceType: string): Promise<any> | undefined {
+
+        if (this.lazyMapping[resourceType]) {
+            return new Promise(((resolve, reject) => {
+                this.lazyMapping[resourceType]().then((component) => {
+
+                    // once we resolved the component, we put it in the normal registry and cleanse the lazyMap.
+                    this.map(resourceType, component);
+                    delete this.lazyMapping[resourceType];
+
+                    resolve(component);
+                }).catch(reject);
+            }))
+        }
+
     }
 
 }
