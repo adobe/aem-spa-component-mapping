@@ -9,5 +9,14 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+export class LazyClass {
+    static get hello() {
+        return 'world';
+    }
+}
 
-export { ComponentMapping, MapTo } from './ComponentMapping';
+export class LazyClass2 {
+    static get hello2() {
+        return 'world';
+    }
+}
