@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.7...v1.0.8) (2021-01-05)
+
+
+### Bug Fixes
+
+* **docs:** remove --mode from docs build after a typedoc breaking change ([087645d](https://github.com/adobe/aem-spa-component-mapping/commit/087645df9d8cf8bf2eba9fc44838bf17719662b3))
+
 ## [1.0.7](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.6...v1.0.7) (2020-10-08)
 
 
