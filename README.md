@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/adobe/aem-spa-component-mapping/blob/master/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/@adobe/aem-spa-component-mapping.svg)](https://www.npmjs.com/package/@adobe/aem-spa-component-mapping)
-[![Documentation](https://img.shields.io/badge/docs-api-blue)](https://opensource.adobe.com/aem-spa-component-mapping/globals.html)
+[![Documentation](https://img.shields.io/badge/docs-api-blue)](https://opensource.adobe.com/aem-spa-component-mapping/)
 
 [![codecov](https://codecov.io/gh/adobe/aem-spa-component-mapping/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-spa-component-mapping)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=adobe_aem-spa-component-mapping&metric=alert_status)](https://sonarcloud.io/dashboard?id=adobe_aem-spa-component-mapping)
