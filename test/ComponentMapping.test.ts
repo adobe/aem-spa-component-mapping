@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-
 import { ComponentMapping } from '../src/ComponentMapping';
 import { LazyClass } from './LazyClass';
 
@@ -65,7 +64,7 @@ describe('ComponentMapping', () => {
 
         // attempt to create mapping
         mapping.map(resource, undefined);
-        mapping.lazyMap(lazyResource, () => new Promise<any>((resolve => resolve())));
+        mapping.lazyMap(lazyResource, () => new Promise<unknown>((resolve => resolve())));
         // mapping does not exist
         expect(mapping.get(resource)).toBeUndefined();
         expect(mapping.getLazy(resource)).resolves.toThrowError();

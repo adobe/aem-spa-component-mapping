@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 export class LazyClass {
-    static get hello() {
+    static get hello():string {
         return 'world';
     }
 }
 
 export class LazyClass2 {
-    static get hello2() {
+    static get hello2():string {
         return 'world';
     }
 }
