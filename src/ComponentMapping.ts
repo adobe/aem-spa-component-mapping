@@ -15,7 +15,7 @@
  * @private
  */
 interface ComponentMappingObject {
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 /**
@@ -121,17 +121,17 @@ class ComponentMappingImpl {
      * @param {string} resourceType - resource type
      * @returns {object|undefined} - class associated with given resource type
      */
-    public getLazy(resourceType: string): Promise<any> | undefined {
+    public getLazy(resourceType: string): Promise<unknown>{
         return ComponentMappingImpl.getLazy(resourceType);
     }
 
-    public static getLazy(resourceType: string): Promise<any> | undefined {
+    public static getLazy(resourceType: string): Promise<unknown> {
 
         if (this.lazyMapping[resourceType]) {
             return this.lazyMapping[resourceType]();
         }
 
-        return;
+        return Promise.reject('resourceType ' + resourceType + ' not found in mappings!');
     }
 
 }
@@ -157,6 +157,24 @@ const MapTo = (resourceTypes: string | string[]): (clazz: unknown) => void => {
     return (clazz: unknown) => ComponentMappingImpl.instance.map(resourceTypes, clazz);
 };
 
+/**
+ * Use to register resource types to Class mapping in a lazyLoad fashion, with dynamic imports
+ *
+ * Example:
+ * ```
+ * import { LazyMapTo } from '@adobe/aem-spa-component-mapping';
+ *
+ * MyComponent.ts:
+ * export class MyComponent {
+ *  ...
+ * }
+ *
+ * LazyMapTo('my/resource/type')(MyComponent);
+ * ```
+ *
+ * @param resourceTypes AEM resource type(s).
+ * @returns Function mapping a class with the given resource types.
+ */
 const LazyMapTo = (resourceTypes: string | string[]): (lazyPromise: lazyMapFunction) => void => {
     return (lazyPromise: lazyMapFunction) => ComponentMappingImpl.instance.lazyMap(resourceTypes, lazyPromise);
 };

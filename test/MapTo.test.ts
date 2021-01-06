@@ -47,7 +47,7 @@ describe('MapTo', () => {
     it('should return `undefined` if given resource string is not mapped', () => {
         // then
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).toBeUndefined();
+        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
     });
 
     it('should not create mapping if class was not provided', () => {
@@ -57,7 +57,7 @@ describe('MapTo', () => {
 
         // then
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).toBeUndefined();
+        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
     });
 
     it('should create mapping for a single resource', () => {

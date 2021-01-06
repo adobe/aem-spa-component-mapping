@@ -10,6 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
+
 import { ComponentMapping } from '../src/ComponentMapping';
 import { LazyClass } from './LazyClass';
 
@@ -60,20 +61,20 @@ describe('ComponentMapping', () => {
     it('should not create any mapping if class is missing', () => {
         // mapping does not exist
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).toBeUndefined();
+        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
 
         // attempt to create mapping
         mapping.map(resource, undefined);
         mapping.lazyMap(lazyResource, () => new Promise<any>((resolve => resolve())));
         // mapping does not exist
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(resource)).toBeUndefined();
+        expect(mapping.getLazy(resource)).resolves.toThrowError();
     });
 
     it('should create mapping between resource type and component class', () => {
         // mapping does not exist
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).toBeUndefined();
+        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
 
         // creating mapping
         mapping.map(resource, SampleClass);
@@ -90,9 +91,9 @@ describe('ComponentMapping', () => {
         expect(mapping.get(resourcesArray[1])).toBeUndefined();
         expect(mapping.get(resourcesArray[2])).toBeUndefined();
 
-        expect(mapping.getLazy(lazyResourcesArray[0])).toBeUndefined();
-        expect(mapping.getLazy(lazyResourcesArray[1])).toBeUndefined();
-        expect(mapping.getLazy(lazyResourcesArray[2])).toBeUndefined();
+        expect(mapping.getLazy(lazyResourcesArray[0])).resolves.toThrowError();
+        expect(mapping.getLazy(lazyResourcesArray[1])).resolves.toThrowError();
+        expect(mapping.getLazy(lazyResourcesArray[2])).resolves.toThrowError();
 
         // creating mapping
         mapping.map(resourcesArray, SampleClass);
@@ -103,10 +104,7 @@ describe('ComponentMapping', () => {
         expect(mapping.get(resourcesArray[1])).toBe(SampleClass);
         expect(mapping.get(resourcesArray[2])).toBe(SampleClass);
 
-        const checkPromise = (promise:Promise<any> | undefined) => {
-            if (!promise) {
-                throw new Error('Promise not found!');
-            }
+        const checkPromise = (promise:Promise<unknown>) => {
             promise.then((clazz) => {
                 expect(clazz).toBe(LazyClass);
             });
