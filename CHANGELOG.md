@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.8...v1.1.0) (2021-01-08)
+
+
+### Features
+
+* Support for LazyLoading using promises ([228b65b](https://github.com/adobe/aem-spa-component-mapping/commit/228b65b1ef770c0fb8f19975a93f8f58a08be1ca))
+
 ## [1.0.8](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.7...v1.0.8) (2021-01-05)
 
 
