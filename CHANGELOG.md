@@ -38,6 +38,4 @@
 
 ### Changes
 
-* Providing support for lazyloaded mappings (for Angular and possibly other libraries) using promises
-
 Initial public release of `aem-spa-component-mapping`. Renamed from cq-spa-component-mapping.
