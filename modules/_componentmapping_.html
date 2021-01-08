@@ -71,8 +71,15 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_componentmapping_.html#lazymapfunction" class="tsd-kind-icon">lazy<wbr>Map<wbr>Function</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_componentmapping_.html#lazymapto" class="tsd-kind-icon">Lazy<wbr>Map<wbr>To</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_componentmapping_.html#mapto" class="tsd-kind-icon">Map<wbr>To</a></li>
 							</ul>
 						</section>
@@ -80,7 +87,96 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="lazymapfunction" class="tsd-anchor"></a>
+					<h3>lazy<wbr>Map<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">lazy<wbr>Map<wbr>Function<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/ac9f3c0/src/ComponentMapping.ts#L35">ComponentMapping.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="lazymapto" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Lazy<wbr>Map<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Lazy<wbr>Map<wbr>To<span class="tsd-signature-symbol">(</span>resourceTypes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>lazyPromise<span class="tsd-signature-symbol">: </span><a href="_componentmapping_.html#lazymapfunction" class="tsd-signature-type">lazyMapFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/ac9f3c0/src/ComponentMapping.ts#L178">ComponentMapping.ts:178</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Use to register resource types to Class mapping in a lazyLoad fashion, with dynamic imports</p>
+								</div>
+								<p>Example:</p>
+								<pre><code><span class="hljs-keyword">import</span> { LazyMapTo } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@adobe/aem-spa-component-mapping&#x27;</span>;
+
+MyComponent.ts:
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> {</span>
+ ...
+}
+
+LazyMapTo(<span class="hljs-string">&#x27;my/resource/type&#x27;</span>)(MyComponent);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resourceTypes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>AEM resource type(s).</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span>lazyPromise<span class="tsd-signature-symbol">: </span><a href="_componentmapping_.html#lazymapfunction" class="tsd-signature-type">lazyMapFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h4>
+							<p>Function mapping a class with the given resource types.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>lazyPromise<span class="tsd-signature-symbol">: </span><a href="_componentmapping_.html#lazymapfunction" class="tsd-signature-type">lazyMapFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>lazyPromise: <a href="_componentmapping_.html#lazymapfunction" class="tsd-signature-type">lazyMapFunction</a></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="mapto" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> Map<wbr>To</h3>
@@ -91,7 +187,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/e0d1824/src/ComponentMapping.ts#L111">ComponentMapping.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/adobe/aem-spa-component-mapping/blob/ac9f3c0/src/ComponentMapping.ts#L156">ComponentMapping.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -159,6 +255,12 @@ class MyComponent {
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_componentmapping_.html#lazymapfunction" class="tsd-kind-icon">lazy<wbr>Map<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_componentmapping_.html#lazymapto" class="tsd-kind-icon">Lazy<wbr>Map<wbr>To</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_componentmapping_.html#mapto" class="tsd-kind-icon">Map<wbr>To</a>
 					</li>
@@ -173,6 +275,7 @@ class MyComponent {
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 		</div>
 	</div>
