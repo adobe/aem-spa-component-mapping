@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/adobe/aem-spa-component-mapping/compare/v1.1.0...v1.1.1) (2021-04-15)
+
+
+### Bug Fixes
+
+* return generic types in get/getLazy ([#39](https://github.com/adobe/aem-spa-component-mapping/issues/39)) ([f92ac1f](https://github.com/adobe/aem-spa-component-mapping/commit/f92ac1f9d20e992d782292d6e12e483edde5cce1))
+
 # [1.1.0](https://github.com/adobe/aem-spa-component-mapping/compare/v1.0.8...v1.1.0) (2021-01-08)
 
 
