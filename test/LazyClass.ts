@@ -14,9 +14,3 @@ export class LazyClass {
         return 'world';
     }
 }
-
-export class LazyClass2 {
-    static get hello2():string {
-        return 'world';
-    }
-}
