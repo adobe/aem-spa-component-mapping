@@ -102,7 +102,7 @@ class ComponentMappingImpl {
      * @param resourceType Resource type.
      * @returns Class associated with given resource type or `undefined`.
      */
-    public get(resourceType: string): unknown {
+    public get<T>(resourceType: string): T {
         return ComponentMappingImpl.get(resourceType);
     }
 
@@ -111,8 +111,8 @@ class ComponentMappingImpl {
      * @param resourceType Resource type.
      * @returns Class associated with given resource type or `undefined`.
      */
-    public static get(resourceType: string): unknown {
-        return this.mapping[resourceType];
+    public static get<T>(resourceType: string): T {
+        return this.mapping[resourceType] as T;
     }
 
     /**
@@ -121,14 +121,14 @@ class ComponentMappingImpl {
      * @param {string} resourceType - resource type
      * @returns {object|undefined} - class associated with given resource type
      */
-    public getLazy(resourceType: string): Promise<unknown> {
+    public getLazy<T>(resourceType: string): Promise<T> {
         return ComponentMappingImpl.getLazy(resourceType);
     }
 
-    public static getLazy(resourceType: string): Promise<unknown> {
+    public static getLazy<T>(resourceType: string): Promise<T> {
 
         if (this.lazyMapping[resourceType]) {
-            return this.lazyMapping[resourceType]();
+            return this.lazyMapping[resourceType]() as Promise<T>;
         }
 
         return Promise.reject('resourceType ' + resourceType + ' not found in mappings!');

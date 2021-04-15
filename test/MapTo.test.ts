@@ -11,11 +11,10 @@
  */
 
 import { ComponentMapping, LazyMapTo, MapTo } from '../src/ComponentMapping';
-import { LazyClass, LazyClass2 } from './LazyClass';
+import { LazyClass } from './LazyClass';
 
 const resource = 'test/mapto';
 const resourcesArray = [ 'resource/mapto/first', 'resource/mapto/second', 'resource/mapto/third' ];
-
 const lazyResource = 'some/lazy/resource';
 const lazyResourcesArray: string[] = [ 'lazyresource/first', 'lazyresource/second', 'lazyresource/third' ];
 
@@ -47,7 +46,7 @@ describe('MapTo', () => {
     it('should return `undefined` if given resource string is not mapped', () => {
         // then
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
+        expect(mapping.getLazy(lazyResource)).rejects.toEqual(`resourceType ${lazyResource} not found in mappings!`);
     });
 
     it('should not create mapping if class was not provided', () => {
@@ -57,17 +56,17 @@ describe('MapTo', () => {
 
         // then
         expect(mapping.get(resource)).toBeUndefined();
-        expect(mapping.getLazy(lazyResource)).resolves.toThrowError();
+        expect(mapping.getLazy(lazyResource)).rejects.toEqual(`resourceType ${lazyResource} not found in mappings!`);
     });
 
     it('should create mapping for a single resource', () => {
         // when
         MapTo(resource)(SampleClassOne);
         LazyMapTo(lazyResource)(() => lazyPromise);
+
         // then
         expect(mapping.get(resource)).toEqual(SampleClassOne);
         expect(mapping.getLazy(lazyResource)).resolves.toBe(LazyClass);
-
     });
 
     it('should override mapping for single resource', () => {
@@ -102,12 +101,12 @@ describe('MapTo', () => {
 
         // then
         expect(mapping.get(resourcesArray[0])).toEqual(SampleClassTwo);
-        expect(mapping.getLazy(lazyResourcesArray[0])).resolves.toBe(LazyClass2);
+        expect(mapping.getLazy(lazyResourcesArray[0])).resolves.toBe(LazyClass);
 
         expect(mapping.get(resourcesArray[1])).toEqual(SampleClassTwo);
-        expect(mapping.getLazy(lazyResourcesArray[1])).resolves.toBe(LazyClass2);
+        expect(mapping.getLazy(lazyResourcesArray[1])).resolves.toBe(LazyClass);
 
         expect(mapping.get(resourcesArray[2])).toEqual(SampleClassTwo);
-        expect(mapping.getLazy(lazyResourcesArray[2])).resolves.toBe(LazyClass2);
+        expect(mapping.getLazy(lazyResourcesArray[2])).resolves.toBe(LazyClass);
     });
 });
