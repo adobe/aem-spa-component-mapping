@@ -33,7 +33,6 @@
     "test:debug": "jest --coverage --watchAll",
     "test": "jest --clearCache && jest"
   },
-  "dependencies": {},
   "devDependencies": {
     "@adobe/eslint-config-editorxp": "^1.0.2",
     "@semantic-release/changelog": "^5.0.1",
