@@ -16,7 +16,7 @@
     "url": "https://github.com/adobe/aem-spa-component-mapping/issues"
   },
   "engines": {
-    "npm": "7.19.1",
+    "npm": "7.20.0",
     "node": ">=12.16.2"
   },
   "main": "dist/aem-spa-component-mapping.js",
